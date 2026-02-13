@@ -18,53 +18,50 @@ Každý filament je uložen jako samostatný `.json` soubor. `USERID` je číslo
 
 ---
 
-## 🧭 Doporučený workflow
+# Setup po `git clone`
+
+Git **nesynchronizuje lokální config ani hooky** (bezpečnostní důvod).
+Proto je potřeba po každém novém klonu provést inicializaci.
+
+## Nastavení verzovaných hooků
+Poté co pustíte `git clone` spustit:
+
+```
+git config alias.pull '!./scripts/git-pull-safe.sh'
+```
+tím se nastaví alias pro pull, který pustí `git-pull-safe` script namísto `git pull`
+
+## Nastavení úložiště filamentu (flatpak) do repa
+
+0. VYPNOUT BAMBU STUDIO
+1. Najděte `ID` uživatele v `~/.var/app/com.bambulab.BambuStudio/config/BambuStudio/`
+2. V něm je adresář `filaments` -- smazat
+3. `$REPOPATH` je samozřejmě cesta k tomuto repozitáři na disku
+```
+ln -s $REPOPATH/filaments
+```
+4. Profit
+
+## Doporučený workflow
 
 1. Zavři Bambu Studio
 2. Commitni změny filamentů
-3. Proveď `git pull`
+3. Proveď `git pull` + merge
 4. Proveď `git push`
 5. Na druhém stroji: `git pull`
 6. Spusť Bambu Studio
 
-⚠️ **Nikdy neprováděj pull/push při běžícím Bambu Studio.**
+**Nikdy neprovádět pull/push při běžícím Bambu Studio.**
 
 ---
 
-## 🛡 Ochrana proti pull při otevřeném Bambu Studio
+## Ochrana proti pull při otevřeném Bambu Studio
 
 Repo obsahuje lokální wrapper, který:
 
 - přepisuje `git pull` pouze v tomto repozitáři
 - kontroluje, zda má Bambu Studio otevřené filament JSON soubory
 - pokud ano, operaci zablokuje
-
-
-### Nastavení (provedeno jednou v repu)
-
-```bash
-git config alias.pull '!./scripts/git-pull-safe.sh'
-```
-
-### Wrapper skript
-
-Umístění:
-
-```
-scripts/git-pull-safe.sh
-```
-
----
-
-## 🔄 Synchronizace filament adresáře
-
-Symlink z bambu addr do tohoto repa
-```bash
-mv ~/.var/app/com.bambulab.BambuStudio/data/bambu-studio/storage/user/filament ~/bambu-filaments
-ln -s ~/bambu-filaments ~/.var/app/com.bambulab.BambuStudio/data/bambu-studio/storage/user/filament
-```
-
-Tím pádem Git verzionuje přímo aktivní data.
 
 ---
 
