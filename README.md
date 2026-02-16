@@ -66,7 +66,3 @@ Repo obsahuje lokální wrapper, který:
 ---
 
 Hotovo
-
-Tento setup je bezpečný, reprodukovatelný a dobře auditovatelný.
-
-Tento readme vygeneroval chatgpt, protoze psani tohoto nemam rad. 
