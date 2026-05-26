@@ -24,10 +24,10 @@
         "70"
     ],
     "cool_plate_temp": [
-        "35"
+        "30"
     ],
     "cool_plate_temp_initial_layer": [
-        "35"
+        "30"
     ],
     "cooling_perimeter_transition_distance": [
         "10"
@@ -66,10 +66,10 @@
         "0"
     ],
     "eng_plate_temp": [
-        "0"
+        "45"
     ],
     "eng_plate_temp_initial_layer": [
-        "0"
+        "50"
     ],
     "fan_cooling_layer_time": [
         "100"
@@ -84,7 +84,7 @@
         "0"
     ],
     "filament_adhesiveness_category": [
-        "100"
+        "600"
     ],
     "filament_bridge_speed": [
         "25"
@@ -102,38 +102,37 @@
         "20"
     ],
     "filament_density": [
-        "1.24"
+        "0.9"
     ],
     "filament_deretraction_speed": [
         "nil"
     ],
     "filament_dev_ams_drying_ams_limitations": [
-        "1",
-        "0"
+        "1"
     ],
     "filament_dev_ams_drying_heat_distortion_temperature": [
         "45"
     ],
     "filament_dev_ams_drying_temperature": [
-        "45",
-        "45",
+        "65",
+        "75",
         "45",
         "45"
     ],
     "filament_dev_ams_drying_time": [
         "12",
+        "18",
         "12",
-        "12",
-        "12"
+        "18"
     ],
     "filament_dev_chamber_drying_bed_temperature": [
-        "70"
+        "90"
     ],
     "filament_dev_chamber_drying_time": [
-        "12"
+        "16"
     ],
     "filament_dev_drying_cooling_temperature": [
-        "45"
+        "40"
     ],
     "filament_dev_drying_softening_temperature": [
         "50"
@@ -151,7 +150,7 @@
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.98"
+        "1"
     ],
     "filament_flush_temp": [
         "0"
@@ -159,7 +158,7 @@
     "filament_flush_volumetric_speed": [
         "0"
     ],
-    "filament_id": "Pdbc7831",
+    "filament_id": "P8b135ab",
     "filament_is_support": [
         "0"
     ],
@@ -167,7 +166,7 @@
         "nil"
     ],
     "filament_max_volumetric_speed": [
-        "12"
+        "3.2"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -231,7 +230,7 @@
         "nil"
     ],
     "filament_retraction_length": [
-        "nil"
+        "0.4"
     ],
     "filament_retraction_minimum_travel": [
         "nil"
@@ -240,7 +239,7 @@
         "nil"
     ],
     "filament_scarf_gap": [
-        "15%"
+        "0%"
     ],
     "filament_scarf_height": [
         "10%"
@@ -252,7 +251,7 @@
         "none"
     ],
     "filament_settings_id": [
-        "Alzament PLA Basic @Bambu Lab P1S 0.4 nozzle"
+        "Gembird TPU TPE @Bambu Lab P1S 0.4 nozzle"
     ],
     "filament_shrink": [
         "100%"
@@ -261,7 +260,7 @@
         "0"
     ],
     "filament_start_gcode": [
-        "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+        "; filament start gcode\n{if (bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S255\n{elsif (bed_temperature[current_extruder] >30)||(bed_temperature_initial_layer[current_extruder] >30)}M106 P3 S180\n{endif} \n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
     ],
     "filament_tower_interface_pre_extrusion_dist": [
         "10"
@@ -279,13 +278,13 @@
         "4"
     ],
     "filament_type": [
-        "PLA"
+        "TPU"
     ],
     "filament_velocity_adaptation_factor": [
         "1"
     ],
     "filament_vendor": [
-        "Alzament"
+        "Gembird"
     ],
     "filament_wipe": [
         "nil"
@@ -322,10 +321,10 @@
         "0.088"
     ],
     "hot_plate_temp": [
-        "60"
+        "45"
     ],
     "hot_plate_temp_initial_layer": [
-        "60"
+        "50"
     ],
     "impact_strength_z": [
         "10"
@@ -334,27 +333,27 @@
     "long_retractions_when_ec": [
         "0"
     ],
-    "name": "Alzament PLA Basic @Bambu Lab P1S 0.4 nozzle",
+    "name": "Gembird TPU TPE @Bambu Lab P1S 0.4 nozzle",
     "no_slow_down_for_cooling_on_outwalls": [
         "0"
     ],
     "nozzle_temperature": [
-        "220"
+        "240"
     ],
     "nozzle_temperature_initial_layer": [
-        "220"
+        "240"
     ],
     "nozzle_temperature_range_high": [
-        "220"
+        "250"
     ],
     "nozzle_temperature_range_low": [
-        "210"
+        "220"
     ],
     "overhang_fan_speed": [
         "100"
     ],
     "overhang_fan_threshold": [
-        "50%"
+        "95%"
     ],
     "overhang_threshold_participating_cooling": [
         "95%"
@@ -384,24 +383,24 @@
         "8"
     ],
     "slow_down_min_speed": [
-        "20"
+        "10"
     ],
     "supertack_plate_temp": [
-        "45"
+        "0"
     ],
     "supertack_plate_temp_initial_layer": [
-        "45"
+        "0"
     ],
     "temperature_vitrification": [
-        "45"
+        "30"
     ],
     "textured_plate_temp": [
-        "60"
+        "45"
     ],
     "textured_plate_temp_initial_layer": [
-        "60"
+        "45"
     ],
-    "version": "2.5.0.7",
+    "version": "2.5.0.14",
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ]
